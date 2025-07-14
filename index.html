@@ -4,319 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fresh Pani Puri - Authentic Taste</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #ff9a56 0%, #ffad56 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #e74c3c;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 20px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(10px);
-            margin: 2rem 0;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .products {
-            padding: 4rem 0;
-        }
-
-        .products h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .product-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #ff6b6b, #ffa500);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, transparent 30%, rgba(255, 255, 255, 0.1) 70%);
-        }
-
-        .product-emoji {
-            font-size: 4rem;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        .product-info {
-            padding: 2rem;
-        }
-
-        .product-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .product-description {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .product-price {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #e74c3c;
-            margin-bottom: 1.5rem;
-        }
-
-        .order-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .order-btn:hover {
-            background: linear-gradient(135deg, #128c7e, #25d366);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-        }
-
-        .whatsapp-icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        .about {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 4rem 0;
-            border-radius: 20px;
-            margin: 2rem 0;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .about h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        .about-content {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        footer {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem 0;
-            text-align: center;
-            margin-top: 2rem;
-            border-radius: 20px 20px 0 0;
-        }
-
-        .footer-content {
-            color: #666;
-        }
-
-        .footer-content h3 {
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .contact-details {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">🥟 Fresh Pani Puri</div>
+                <div class="logo">
+                    <img src="assets/logo-pani-puri.png" alt="Fresh Pani Puri Logo" class="logo-img"> Fresh Pani Puri
+                </div>
                 <div class="contact-info">
-                    <div>📞 Call: +91-XXXXXXXXXX</div>
-                    <div>📍 Gurugram, Haryana</div>
+                    <div><a href="tel:+919311587237" style="text-decoration:none; color:inherit;">📞 Call: +91-9311587237</a></div>
+                    <div><a href="https://www.google.com/maps/place/Wholesaler+of+Pani+puri+-+Raju+Bhai/@28.5003916,77.235215,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce1335581b975:0x919fb0810d83a26b!8m2!3d28.500387!4d77.2398284!16s%2Fg%2F11mcrv7kys?entry=ttu" target="_blank" style="text-decoration:none; color:inherit;">📍 Wholesaler of Pani puri - Raju Bhai, Sangam Vihar, New Delhi</a></div>
                 </div>
             </div>
         </div>
@@ -328,51 +27,103 @@
             <p>Fresh, crispy, and bursting with flavors - delivered to your restaurant and shop!</p>
         </section>
 
-        <section class="products">
-            <h2>Our Specialties</h2>
-            <div class="product-grid">
-                <div class="product-card" onclick="orderProduct('Pani Puri')">
-                    <div class="product-image">
-                        <div class="product-emoji">🥟</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Classic Pani Puri</h3>
-                        <p class="product-description">Traditional crispy puris with tangy mint water, tamarind chutney, and perfectly spiced filling. Made fresh daily with authentic recipes.</p>
-                        <div class="product-price">₹XX per piece</div>
-                        <button class="order-btn pulse">
-                            <span class="whatsapp-icon">📱</span>
-                            Order on WhatsApp
-                        </button>
-                    </div>
+        <!-- Image Carousel Section -->
+        <section class="image-gallery">
+            <h2>Our Pani Puri Gallery</h2>
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number text and caption text -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="assets/atta/cover.jpg" alt="Atta Golgappa">
+                    <div class="text">Premium Atta Golgappa - unbeatable taste and crispiness</div>
                 </div>
 
-                <div class="product-card" onclick="orderProduct('Suji Pani Puri')">
-                    <div class="product-image">
-                        <div class="product-emoji">🌟</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Suji Pani Puri</h3>
-                        <p class="product-description">Premium suji (semolina) puris with enhanced crunch and flavor. Perfect for those who love extra texture and taste in their pani puri.</p>
-                        <div class="product-price">₹XX per piece</div>
-                        <button class="order-btn pulse">
-                            <span class="whatsapp-icon">📱</span>
-                            Order on WhatsApp
-                        </button>
-                    </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="assets/suji/cover.jpg" alt="Suji Golgappa">
+                    <div class="text">Crispy Suji Golgappa - extra crunch and flavor</div>
                 </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="assets/papdi/cover.jpg" alt="Sev Papdi">
+                    <div class="text">Classic Sev Papdi - light, crunchy bite</div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
             </div>
         </section>
+        <!-- End Image Carousel Section -->
+
+        <section class="products">
+            <h2>Our Specialties</h2>
+            <!-- Product cards will be rendered here by JavaScript -->
+            <div class="product-grid" id="productGrid"></div>
+        </section>
+
+        <!-- Delivery Notice -->
+        <div class="delivery-notice">
+            <img src="assets/porter/porter-logo.png" alt="Porter Logo" class="porter-logo">
+            <div class="delivery-text">
+                <strong>Note:</strong> <b>Porter delivery charges must be paid by the customer.</b> Products are delivered using <strong>Porter</strong> <img src="assets/porter/porter-logo.png" alt="Porter" style="height:1.2em;vertical-align:middle;">. Please ensure your order value is sufficient to cover transportation cost. For any questions about delivery, feel free to ask us on WhatsApp before placing your order.
+            </div>
+        </div>
+        <div class="delivery-areas">
+          <strong>Delivery Available In:</strong>
+          <span class="delivery-area-list">
+            Saket, Malviya Nagar, Greater Kailash, Hauz Khas, Mehrauli, Tughlakabad, Govindpuri, Khanpur, Devli, Tigri, Chirag Dilli, Sheikh Sarai, Dakshinpuri, Sainik Farm, Pushp Vihar, Okhla Industrial Area, Nehru Place, Mohan Cooperative Industrial Estate, Faridabad, Gurgaon, Noida
+          </span>
+          <div class="delivery-minimum">
+            <span>🚚 <b>Minimum order value for delivery: ₹1000</b></span><br>
+            <small>For orders below ₹1000, delivery is not available as transportation cost would be too high for small orders. Please plan your order accordingly to avoid high delivery charges.</small>
+          </div>
+        </div>
+
+        <!-- Order Modal -->
+        <div id="orderModal" class="order-modal" style="display:none;">
+            <div class="order-modal-content">
+                <span class="order-modal-close" onclick="closeOrderModal()">&times;</span>
+                <h2 id="modalProductTitle">Order Product</h2>
+                <form id="orderForm" onsubmit="sendOrderToWhatsApp(event)">
+                    <div class="order-modal-row">
+                        <label for="orderQuantity">Quantity:</label>
+                        <input type="number" id="orderQuantity" name="orderQuantity" min="1" required>
+                        <span id="orderMinInfo" style="font-size:0.95em; color:#888;"></span>
+                    </div>
+                    <div class="order-modal-row">
+                        <label for="orderNote">Note (optional):</label>
+                        <textarea id="orderNote" name="orderNote" rows="2" placeholder="Any special requirements?"></textarea>
+                    </div>
+                    <div class="order-modal-row">
+                        <button type="submit" class="order-btn" style="width:100%;">Send on WhatsApp</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <section class="about">
             <h2>Why Choose Us?</h2>
             <div class="about-content">
                 <p>We specialize in supplying fresh, authentic pani puri to restaurants and shops across Gurugram. Our commitment to quality ingredients, traditional recipes, and timely delivery makes us the preferred choice for businesses looking to serve the best pani puri to their customers.</p>
                 <br>
-                <p>✅ Fresh ingredients daily<br>
-                ✅ Authentic taste<br>
-                ✅ Timely delivery<br>
-                ✅ Competitive pricing<br>
-                ✅ Quality guaranteed</p>
+                <div class="about-checklist">
+                  <span>✅ Fresh ingredients daily</span>
+                  <span>✅ Authentic taste</span>
+                  <span>✅ Timely delivery</span>
+                  <span>✅ Competitive pricing</span>
+                  <span>✅ Quality guaranteed</span>
+                </div>
             </div>
         </section>
     </div>
@@ -384,11 +135,11 @@
                 <div class="contact-details">
                     <div class="contact-item">
                         <span>📞</span>
-                        <span>+91-XXXXXXXXXX</span>
+                        <span><a href="tel:+919311587237" style="text-decoration:none; color:inherit;">+91-9311587237</a></span>
                     </div>
                     <div class="contact-item">
                         <span>📍</span>
-                        <span>Gurugram, Haryana</span>
+                        <span><a href="https://www.google.com/maps/place/Wholesaler+of+Pani+puri+-+Raju+Bhai/@28.5003916,77.235215,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce1335581b975:0x919fb0810d83a26b!8m2!3d28.500387!4d77.2398284!16s%2Fg%2F11mcrv7kys?entry=ttu" target="_blank" style="text-decoration:none; color:inherit;">Wholesaler of Pani puri - Raju Bhai, Sangam Vihar, New Delhi</a></span>
                     </div>
                     <div class="contact-item">
                         <span>⏰</span>
@@ -400,28 +151,8 @@
         </div>
     </footer>
 
-    <script>
-        function orderProduct(productName) {
-            const phoneNumber = 'XXXXXXXXXX'; // Replace with your WhatsApp number (without +91)
-            const message = `Hi! I want to order ${productName}. Please share more details about pricing and availability.`;
-            const whatsappUrl = `https://wa.me/91${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Add some interactive animations
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.product-card');
-            
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-10px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-        });
-    </script>
+    <!-- Load product data first, then main scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
