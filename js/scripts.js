@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return `
             <div class="product-card" data-product="${product.name}">
                 <div class="product-image">
-                    <img src="${product.images[0]}" alt="${product.name}" class="cover-image">
+                    <img src="${product.images[0]}" alt="${product.name}" class="product-photo">
                 </div>
                 <div class="product-gallery">${gallery}</div>
                 <div class="product-info">
@@ -69,6 +69,31 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+});
+
+// --- Render Paste Cards Dynamically ---
+document.addEventListener('DOMContentLoaded', function() {
+    const pasteGrid = document.getElementById('pasteGrid');
+    if (!pasteGrid) return;
+    const pastes = [
+        { name: 'Hing', image: 'assets/pani-puri-paste/hing.png' },
+        { name: 'Jaljeera', image: 'assets/pani-puri-paste/Jaljeera.png' },
+        { name: 'Lasooni', image: 'assets/pani-puri-paste/lasooni.png' },
+        { name: 'Pudina', image: 'assets/pani-puri-paste/Pudina .png' },
+        { name: 'Teekha', image: 'assets/pani-puri-paste/Teekha.png' }
+    ];
+    pasteGrid.innerHTML = pastes.map(paste => `
+        <div class="product-card">
+            <div class="product-image">
+                <img src="${paste.image}" alt="${paste.name} Paste" class="paste-image" />
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">${paste.name} Paste</h3>
+                <p class="product-description">Made-to-order paste. We will confirm your requirements and then prepare it fresh.</p>
+                <button class="order-btn" onclick="openPasteInquiry('${paste.name}')">Talk on WhatsApp</button>
+            </div>
+        </div>
+    `).join('');
 });
 
 // --- Image Carousel Logic ---
@@ -198,3 +223,12 @@ window.onclick = function(event) {
         closeOrderModal();
     }
 };
+
+// --- Paste Inquiry CTA ---
+function openPasteInquiry(flavor) {
+    const flavorText = flavor ? `\nFlavor: ${flavor}` : '';
+    const message = `Hello! I want to discuss Pani Puri Paste (made-to-order).${flavorText}\nPlease verify my requirements, capacity, delivery area, and paste options.`;
+    const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
+window.openPasteInquiry = openPasteInquiry;

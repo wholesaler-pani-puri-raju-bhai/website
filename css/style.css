@@ -632,9 +632,98 @@ footer {
   box-shadow: 0 1px 6px rgba(139,69,19,0.10);
   background: #fffbe7;
 }
+
+/* --- Paste Images: show full uncropped artwork --- */
+.paste-image {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 18px;
+  border: 3px solid #ffd700;
+  box-shadow: 0 2px 12px rgba(139,69,19,0.10);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 600px) {
+  .paste-image {
+    max-width: 100%;
+  }
+}
+/* --- Full, uncropped photos for product cards --- */
+.product-photo {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 18px;
+  border: 3px solid #ffd700;
+  box-shadow: 0 2px 12px rgba(139,69,19,0.10);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 600px) {
+  .product-photo {
+    max-width: 100%;
+  }
+}
 @media (max-width: 600px) {
   .logo-img {
     max-height: 36px;
     margin-right: 0.4rem;
+  }
+}
+
+/* --- Pani Puri Paste Section --- */
+.paste-section {
+  background: #fff8e1;
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin: 2.5rem 0 2rem 0;
+  box-shadow: 0 2px 8px rgba(139,69,19,0.06);
+}
+.paste-section h2 {
+  color: #8b4513;
+  margin-bottom: 0.6rem;
+}
+.paste-note {
+  color: #3d2c1e;
+  font-size: 1.06rem;
+  margin-bottom: 0.9rem;
+}
+.paste-flavors {
+  background: #fffbe7;
+  border-left: 5px solid #ffd700;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.9rem;
+}
+.paste-flavors ul {
+  margin-left: 1.2rem;
+  margin-top: 0.4rem;
+}
+.paste-gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.6rem 0 1rem 0;
+}
+.paste-thumb {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ffd700;
+  box-shadow: 0 1px 6px rgba(139,69,19,0.08);
+}
+@media (max-width: 600px) {
+  .paste-thumb {
+    width: 90px;
+    height: 66px;
   }
 }
