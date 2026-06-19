@@ -2,7 +2,7 @@ const products = [
     {
         id: "atta",
         name: "Atta Golgappa",
-        price: 1, // 1 Rs per piece
+        price: 2, // 2 Rs per piece
         unit: "Piece",
         minQty: 100,
         displayUnit: "pcs",
@@ -12,7 +12,7 @@ const products = [
     {
         id: "suji",
         name: "Suji Golgappa",
-        price: 2.5, // 2.5 Rs per piece
+        price: 3.5, // 3.5 Rs per piece
         unit: "Piece",
         minQty: 100,
         displayUnit: "pcs",
@@ -22,7 +22,7 @@ const products = [
     {
         id: "sev",
         name: "Sev Papdi",
-        price: 1, // 1 Rs per piece
+        price: 1.5, // 1 Rs per piece
         unit: "Piece",
         minQty: 100,
         displayUnit: "pcs",
