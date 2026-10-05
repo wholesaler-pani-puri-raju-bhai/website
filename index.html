@@ -1,69 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Order | Raju Bhai Wholesale</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raju Bhai Chaat Ghar — Wholesaler of Pani Puri, Sangam Vihar Delhi | Wholesale Price List</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fdf3e3; --cream2:#fbe7c8;
+  --orange:#e8722a; --orange-d:#c95a17;
+  --teal:#1b6f8f; --teal-d:#125573;
+  --brown:#7a4a1f; --ink:#3d2b1f;
+  --green:#3d8b4f; --red:#c0392b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+h1,h2,h3,.brandfont{font-family:'Baloo 2',cursive}
 
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(253,243,227,.95);backdrop-filter:blur(8px);border-bottom:3px solid var(--orange);box-shadow:0 4px 18px rgba(122,74,31,.15)}
+.navwrap{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;gap:.6rem}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink)}
+.logo-badge{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffb15e,var(--orange) 65%);display:grid;place-items:center;font-size:1.5rem;border:3px solid var(--brown);box-shadow:0 3px 8px rgba(0,0,0,.25)}
+.logo-text .brandfont{font-size:1.25rem;font-weight:800;color:var(--orange-d);line-height:1.1}
+.logo-text small{display:block;font-size:.68rem;letter-spacing:.14em;color:var(--teal-d);font-weight:600}
+nav.menu{display:flex;gap:.25rem}
+nav.menu a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.92rem;padding:.45rem .85rem;border-radius:999px;transition:.2s}
+nav.menu a:hover{background:var(--orange);color:#fff}
+.cart-btn{position:relative;background:var(--teal);color:#fff;border:none;border-radius:999px;padding:.55rem 1.1rem;font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer;display:flex;align-items:center;gap:.45rem;transition:.2s;box-shadow:0 4px 12px rgba(27,111,143,.35)}
+.cart-btn:hover{background:var(--teal-d);transform:translateY(-1px)}
+.cart-count{position:absolute;top:-8px;right:-8px;background:var(--red);color:#fff;font-size:.72rem;font-weight:700;min-width:22px;height:22px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--cream)}
+
+/* ---------- Hero ---------- */
+.hero{max-width:1180px;margin:1.6rem auto 0;padding:0 1rem;display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center}
+.hero-card{background:linear-gradient(135deg,#fff8ec,var(--cream2));border:3px solid var(--brown);border-radius:26px;padding:2.2rem 2rem;position:relative;box-shadow:8px 8px 0 rgba(232,114,42,.25)}
+.trust-tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--green);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.12em;padding:.35rem .9rem;border-radius:999px;text-transform:uppercase}
+.hero h1{font-size:clamp(1.9rem,4vw,2.9rem);color:var(--orange-d);line-height:1.15;margin:.8rem 0 .2rem}
+.hero h1 span{color:var(--teal-d)}
+.hero .hindi{font-family:'Baloo 2',cursive;color:var(--brown);font-size:1.15rem;margin-bottom:1rem}
+.hero p.desc{font-size:.95rem;color:#6b5442;max-width:46ch;margin-bottom:1.4rem}
+.cta-row{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:700;font-size:.95rem;padding:.75rem 1.5rem;border-radius:999px;border:none;cursor:pointer;transition:.2s;font-family:inherit}
+.btn-orange{background:var(--orange);color:#fff;box-shadow:0 5px 14px rgba(232,114,42,.4)}
+.btn-orange:hover{background:var(--orange-d);transform:translateY(-2px)}
+.btn-green{background:#25d366;color:#fff;box-shadow:0 5px 14px rgba(37,211,102,.4)}
+.btn-green:hover{background:#1eb856;transform:translateY(-2px)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-d)}
+.hero-img{background:linear-gradient(135deg,var(--teal),var(--teal-d));border-radius:26px;border:3px solid var(--brown);padding:2rem;color:#fff;display:flex;flex-direction:column;gap:1rem;box-shadow:8px 8px 0 rgba(27,111,143,.25)}
+.hero-img .emoji-big{font-size:4rem;text-align:center;filter:drop-shadow(0 6px 8px rgba(0,0,0,.3))}
+.hero-img h3{text-align:center;font-size:1.3rem}
+.tier-chip{background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.5);border-radius:14px;padding:.7rem 1rem;font-size:.82rem;display:flex;justify-content:space-between;gap:.5rem}
+.tier-chip b{color:#ffd9a8}
+
+/* ---------- Marquee strip ---------- */
+.strip{background:var(--brown);color:#ffe9c9;overflow:hidden;padding:.55rem 0;margin-top:1.8rem;border-top:2px solid var(--orange);border-bottom:2px solid var(--orange)}
+.strip-track{display:flex;gap:3rem;white-space:nowrap;font-weight:600;font-size:.88rem;animation:scroll 22s linear infinite;width:max-content}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- Sections ---------- */
+section{max-width:1180px;margin:0 auto;padding:3.2rem 1rem 0}
+.sec-head{text-align:center;margin-bottom:2rem}
+.sec-head .kicker{display:inline-block;background:var(--teal);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.3rem .95rem;border-radius:999px;margin-bottom:.6rem}
+.sec-head h2{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--orange-d)}
+.sec-head p{color:#6b5442;font-size:.92rem;margin-top:.35rem}
+
+/* ---------- Product cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem}
+.card{background:#fff;border:3px solid var(--cream2);border-radius:22px;padding:1.4rem;position:relative;transition:.25s;display:flex;flex-direction:column;box-shadow:0 8px 22px rgba(122,74,31,.1)}
+.card:hover{transform:translateY(-6px);border-color:var(--orange);box-shadow:0 16px 30px rgba(232,114,42,.22)}
+.card .pic{font-size:3rem;height:86px;display:grid;place-items:center;background:linear-gradient(135deg,#fff3dd,#ffe3b8);border-radius:16px;margin-bottom:1rem}
+.badge{position:absolute;top:14px;right:14px;background:var(--red);color:#fff;font-size:.7rem;font-weight:700;padding:.28rem .7rem;border-radius:999px;box-shadow:0 3px 8px rgba(192,57,43,.4)}
+.card h3{font-size:1.12rem;color:var(--teal-d)}
+.card .hi{font-family:'Baloo 2',cursive;color:var(--brown);font-size:.92rem;margin-bottom:.7rem}
+.tiers{list-style:none;margin:0 0 1rem;font-size:.83rem;display:flex;flex-direction:column;gap:.35rem}
+.tiers li{background:var(--cream);border-left:4px solid var(--orange);padding:.4rem .7rem;border-radius:8px;display:flex;justify-content:space-between;gap:.5rem}
+.tiers li b{color:var(--orange-d);white-space:nowrap}
+.qty-row{display:flex;gap:.6rem;margin-top:auto}
+.qty-row input[type=number]{width:100%;min-width:0;flex:1;border:2px solid var(--cream2);border-radius:12px;padding:.6rem .7rem;font-family:inherit;font-size:.95rem;font-weight:600;color:var(--ink);background:var(--cream)}
+.qty-row input:focus{outline:none;border-color:var(--teal)}
+.add-btn{flex:1;background:var(--orange);color:#fff;border:none;border-radius:12px;padding:.6rem .8rem;font-family:inherit;font-weight:700;font-size:.88rem;cursor:pointer;transition:.2s;white-space:nowrap}
+.add-btn:hover{background:var(--orange-d)}
+.min-note{font-size:.72rem;color:var(--red);font-weight:600;margin-top:.45rem}
+
+/* ---------- Info / business details ---------- */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.info-card{background:#fff;border:3px solid var(--cream2);border-radius:18px;padding:1.3rem;display:flex;gap:.9rem;align-items:flex-start;transition:.2s}
+.info-card:hover{border-color:var(--teal)}
+.info-card .ic{font-size:1.6rem;width:52px;height:52px;flex:none;display:grid;place-items:center;background:linear-gradient(135deg,#e8f4f8,#cde8f2);border-radius:14px}
+.info-card h4{font-size:.98rem;color:var(--teal-d);margin-bottom:.2rem}
+.info-card p{font-size:.86rem;color:#6b5442;line-height:1.5}
+.info-card a{color:var(--orange-d);font-weight:600;text-decoration:none}
+.info-card a:hover{text-decoration:underline}
+
+/* ---------- Cart drawer ---------- */
+.overlay{position:fixed;inset:0;background:rgba(30,18,8,.55);opacity:0;pointer-events:none;transition:.25s;z-index:90}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:-420px;width:min(400px,94vw);height:100vh;background:var(--cream);z-index:100;transition:right .3s ease;display:flex;flex-direction:column;border-left:4px solid var(--orange);box-shadow:-10px 0 30px rgba(0,0,0,.3)}
+.drawer.open{right:0}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.2rem;background:var(--brown);color:#ffe9c9}
+.drawer-head h3{font-size:1.15rem}
+.close-x{background:none;border:none;color:#ffe9c9;font-size:1.5rem;cursor:pointer;line-height:1}
+.drawer-body{flex:1;overflow-y:auto;padding:1rem 1.2rem;display:flex;flex-direction:column;gap:.8rem}
+.empty-cart{text-align:center;color:#9c8468;padding:2.5rem 1rem;font-size:.9rem}
+.cart-item{background:#fff;border:2px solid var(--cream2);border-radius:14px;padding:.8rem}
+.cart-item .ci-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.cart-item h4{font-size:.9rem;color:var(--teal-d);font-family:'Baloo 2',cursive}
+.cart-item .rate{font-size:.76rem;color:#6b5442;margin-top:.1rem}
+.cart-item .line-total{font-weight:700;color:var(--orange-d);font-size:.92rem;white-space:nowrap}
+.ci-controls{display:flex;align-items:center;gap:.5rem;margin-top:.55rem}
+.ci-controls button{width:28px;height:28px;border-radius:8px;border:none;background:var(--cream2);font-weight:800;cursor:pointer;font-size:.95rem;color:var(--brown)}
+.ci-controls button:hover{background:var(--orange);color:#fff}
+.ci-controls .rm{margin-left:auto;background:#fdecea;color:var(--red)}
+.ci-qty{font-weight:700;font-size:.9rem;min-width:56px;text-align:center}
+.drawer-foot{padding:1rem 1.2rem 1.3rem;background:#fff;border-top:3px dashed var(--cream2)}
+.total-row{display:flex;justify-content:space-between;font-weight:800;font-size:1.05rem;color:var(--brown);margin-bottom:.7rem}
+.total-row span:last-child{color:var(--orange-d)}
+.field{width:100%;border:2px solid var(--cream2);border-radius:12px;padding:.65rem .8rem;font-family:inherit;font-size:.9rem;margin-bottom:.6rem;background:var(--cream)}
+.field:focus{outline:none;border-color:var(--teal)}
+.order-btn{width:100%;background:#25d366;color:#fff;border:none;border-radius:14px;padding:.85rem;font-family:inherit;font-weight:800;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:.2s;box-shadow:0 5px 14px rgba(37,211,102,.35)}
+.order-btn:hover{background:#1eb856}
+.clear-link{display:block;text-align:center;background:none;border:none;color:var(--red);font-size:.8rem;font-weight:600;cursor:pointer;margin:.55rem auto 0;font-family:inherit}
+
+/* ---------- Footer ---------- */
+footer{margin-top:3.5rem;background:var(--brown);color:#f3ddba;padding:2.2rem 1rem 1.4rem;text-align:center}
+footer .fbrand{font-family:'Baloo 2',cursive;font-size:1.4rem;color:#ffb15e}
+footer p{font-size:.85rem;margin-top:.4rem}
+footer .fine{font-size:.75rem;color:#c9a878;margin-top:1.1rem}
+.wa-float{position:fixed;bottom:22px;left:22px;z-index:80;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 18px rgba(37,211,102,.5);text-decoration:none;transition:.2s}
+.wa-float:hover{transform:scale(1.1)}
+
+/* ---------- Toast ---------- */
+.toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#ffe9c9;padding:.7rem 1.3rem;border-radius:999px;font-size:.86rem;font-weight:600;opacity:0;pointer-events:none;transition:.3s;z-index:110}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr}
+  nav.menu{display:none}
+}
+</style>
+<base target="_blank">
+</head>
 <body>
 
-    <div class="app-container">
+<header>
+  <div class="navwrap">
+    <a class="logo" href="#top">
+      <span class="logo-badge">🥟</span>
+      <span class="logo-text">
+        <span class="brandfont">Raju Bhai Chaat Ghar</span>
+        <small>100% TRUSTED FLAVOUR • WHOLESALE</small>
+      </span>
+    </a>
+    <nav class="menu">
+      <a href="#menu">Menu</a>
+      <a href="#details">Business Details</a>
+      <a href="#how">How to Order</a>
+    </nav>
+    <button class="cart-btn" onclick="toggleCart(true)">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
+  </div>
+</header>
 
-        <!-- Header -->
-        <header class="app-header">
-            <div class="header-content">
-                <h1>Raju Bhai</h1>
-                <p>Wholesale Pani Puri</p>
-                <div class="info-badge">
-                    <span><i class="fas fa-store"></i> Pickup Only</span>
-                    <span><i class="fas fa-clock"></i> Prep Time: 1-2 Days</span>
-                    <span><i class="fas fa-money-bill-wave"></i> 50% Advance</span>
-                </div>
-                <div class="contact-links">
-                    <a href="tel:+919311587237" class="phone-link"><i class="fas fa-phone"></i> Call: 9311587237</a>
-                    <a href="https://wa.me/918010123251" target="_blank" class="phone-link"
-                        style="background-color: #25d366; color: white;"><i class="fab fa-whatsapp"></i> WA:
-                        8010123251</a>
-                    <a href="https://goo.gl/maps/placeholder" target="_blank" class="location-link"><i
-                            class="fas fa-map-marker-alt"></i> Location</a>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Order Interface -->
-        <main class="order-interface">
-            <h2 class="page-title">Select Items</h2>
-
-            <div class="product-list" id="product-list">
-                <!-- Products will be injected here -->
-            </div>
-
-            <!-- Notes Section -->
-            <div class="notes-section">
-                <label for="order-notes">Additional Notes</label>
-                <textarea id="order-notes" rows="2" placeholder="Any special requirements..."></textarea>
-            </div>
-        </main>
-
-        <!-- Sticky Bottom Bar -->
-        <footer class="bottom-bar">
-            <div class="total-area">
-                <span>Total Estimate</span>
-                <span id="grand-total">₹0</span>
-            </div>
-            <button id="place-order-btn" class="action-btn">
-                Place Order <i class="fab fa-whatsapp"></i>
-            </button>
-        </footer>
-
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="hero-card">
+    <span class="trust-tag">⭐ 100% Trusted Flavour</span>
+    <h1>Wholesale Price Menu<br><span>होलसेल रेट लिस्ट</span></h1>
+    <p class="hindi">आटा व सूजी गोलगप्पे • सेव पापड़ी • सॉस और फ्लेवर्ड पानी</p>
+    <p class="desc">Bulk rates for chaat vendors, caterers and retailers. Add items to your cart and order directly on WhatsApp — your full order list is sent to us automatically.</p>
+    <div class="cta-row">
+      <a href="#menu" class="btn btn-orange">📋 View Wholesale Menu</a>
+      <a href="https://wa.me/919311587237?text=Namaste!%20I%20want%20to%20enquire%20about%20wholesale%20rates." target="_blank" class="btn btn-green">💬 Chat on WhatsApp</a>
     </div>
+  </div>
+  <div class="hero-img">
+    <div class="emoji-big">🚚🏠</div>
+    <h3>Order Collection Details<br><small style="font-weight:500;opacity:.85">ऑर्डर कलेक्शन जानकारी</small></h3>
+    <div class="tier-chip"><span>Atta Golgappe</span><b>₹1.50 – ₹2.00 / pc</b></div>
+    <div class="tier-chip"><span>Suji Golgappe</span><b>₹3.00 / pc</b></div>
+    <div class="tier-chip"><span>Sev Papdi</span><b>₹0.80 – ₹1.00 / pc</b></div>
+    <div class="tier-chip"><span>Sauces</span><b>₹80 – ₹100 / kg</b></div>
+    <div class="tier-chip"><span>Spicy Flavour Water</span><b>₹30 – ₹35 / kg</b></div>
+  </div>
+</div>
 
-    <script src="script.js"></script>
+<div class="strip">
+  <div class="strip-track" id="stripTrack"></div>
+</div>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="sec-head">
+    <span class="kicker">Bulk Tiers</span>
+    <h2>Wholesale Rate List</h2>
+    <p>Select a quantity and add to cart — the correct bulk rate applies automatically.</p>
+  </div>
+  <div class="grid" id="productGrid"></div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section id="how">
+  <div class="sec-head">
+    <span class="kicker">Easy Ordering</span>
+    <h2>How to Order</h2>
+    <p>Three simple steps — your order reaches us on WhatsApp as a ready-made list.</p>
+  </div>
+  <div class="info-grid">
+    <div class="info-card"><div class="ic">1️⃣</div><div><h4>Add to Cart</h4><p>Choose your quantity for each product. Bulk tier pricing (थोक रेट) is applied automatically based on quantity.</p></div></div>
+    <div class="info-card"><div class="ic">2️⃣</div><div><h4>Review Your Order</h4><p>Open the cart, check items, quantities and totals. Enter your name so we know who is ordering.</p></div></div>
+    <div class="info-card"><div class="ic">3️⃣</div><div><h4>Tap "Order on WhatsApp"</h4><p>WhatsApp opens with your complete order list as a message — just press send. We confirm your order shortly. ✅</p></div></div>
+  </div>
+</section>
+
+<!-- BUSINESS DETAILS -->
+<section id="details">
+  <div class="sec-head">
+    <span class="kicker">Contact &amp; Location</span>
+    <h2>Business Details</h2>
+    <p>All the information you need to reach us — सीधे संपर्क करें।</p>
+  </div>
+  <div class="info-grid">
+    <div class="info-card"><div class="ic">🏪</div><div><h4>Business Name</h4><p><b>Raju Bhai Chaat Ghar</b><br>Wholesaler of Pani Puri — Raju Bhai<br>100% Trusted Flavour — Wholesale Supplier</p></div></div>
+    <div class="info-card"><div class="ic">📍</div><div><h4>Address</h4><p>C-433, Near Rotary Club &amp; MCD School,<br>C-Block, Sangam Vihar (Khanpur),<br>New Delhi – 110062<br><a href="https://maps.app.goo.gl/LvW3jWqrLhRAPHkr9" target="_blank">📌 View on Google Maps</a></p></div></div>
+    <div class="info-card"><div class="ic">💬</div><div><h4>WhatsApp / Call</h4><p><a href="https://wa.me/919311587237" target="_blank">+91 93115 87237</a><br>Order collection &amp; rate enquiries<br>ऑर्डर व रेट जानकारी हेतु</p></div></div>
+    <div class="info-card"><div class="ic">🕒</div><div><h4>Timing</h4><p><b>Open Daily: 7:15 AM – 9:00 PM</b><br>Other bulk items — palak, chutneys &amp; masalas — available on request.<br><a href="https://maps.app.goo.gl/LvW3jWqrLhRAPHkr9" target="_blank">⭐ Rated 4.2 on Google</a></p></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">Raju Bhai Chaat Ghar</div>
+  <p>Wholesale Supplier — Golgappe • Sev Papdi • Sauces • Flavoured Water<br>और पालक, चटनी व मसालों के थोक रेट के लिए संपर्क करें</p>
+  <p style="margin-top:.6rem;font-size:.82rem">📍 C-433, Near Rotary Club &amp; MCD School, C-Block, Sangam Vihar (Khanpur), New Delhi – 110062 &nbsp;•&nbsp; 🕒 Open Daily 7:15 AM – 9:00 PM<br><a href="https://maps.app.goo.gl/LvW3jWqrLhRAPHkr9" target="_blank" style="color:#ffb15e">📌 Find us on Google Maps</a></p>
+  <p style="margin-top:.8rem"><a href="https://wa.me/919311587237" target="_blank" class="btn btn-green" style="font-size:.85rem;padding:.55rem 1.2rem">💬 WhatsApp: +91 93115 87237</a></p>
+  <p class="fine">© 2026 Raju Bhai Chaat Ghar • 100% Trusted Flavour • Rates subject to bulk quantity &amp; packaging</p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919311587237?text=Namaste!%20I%20want%20to%20place%20a%20wholesale%20order." target="_blank" title="Chat on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.2c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.2z"/></svg>
+</a>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="toggleCart(false)"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h3>🛒 Your Order <span style="font-weight:400;font-size:.8rem">/ आपका ऑर्डर</span></h3><button class="close-x" onclick="toggleCart(false)">✕</button></div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot">
+    <div class="total-row"><span>Estimated Total</span><span id="cartTotal">₹0</span></div>
+    <input class="field" id="custName" type="text" placeholder="Your name / आपका नाम (optional)">
+    <input class="field" id="custNote" type="text" placeholder="Any note? Address, delivery date… (optional)">
+    <button class="order-btn" onclick="orderOnWhatsApp()">💬 Order Now on WhatsApp</button>
+    <button class="clear-link" onclick="clearCart()">Clear cart</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const WA_NUMBER = "919311587237";
+
+const PRODUCTS = [
+  {id:"atta", emoji:"🟤", name:"Atta Golgappe", hi:"आटा गोलगप्पे — थोक रेट", badge:"Min 500+",
+   tiers:[{min:1001,label:"Above 1000",price:1.50},{min:500,label:"500–1000",price:1.80},{min:1,label:"Under 500",price:2.00}],
+   unit:"pc", min:1,
+   minNote:"Best rate above 1000 pcs — ₹1.50/pc"},
+  {id:"suji", emoji:"🟡", name:"Suji Golgappe", hi:"सूजी गोलगप्पे — थोक रेट", badge:"Flat Rate",
+   tiers:[{min:1,label:"Flat Rate",price:3.00}],
+   unit:"pc", min:1,
+   minNote:"Flat ₹3.00 per pc (एक समान रेट)"},
+  {id:"sev", emoji:"🟠", name:"Sev Papdi", hi:"सेव पापड़ी — थोक रेट", badge:"Bulk",
+   tiers:[{min:501,label:"Above 500",price:0.80},{min:1,label:"Under 500",price:1.00}],
+   unit:"pc", min:1,
+   minNote:"Above 500 pcs — ₹0.80/pc"},
+  {id:"sauce", emoji:"🥫", name:"Sauces", hi:"सॉस — थोक रेट", badge:"Per kg",
+   tiers:[{min:1,label:"Wholesale Rate",priceLow:80,priceHigh:100}],
+   unit:"kg", min:1,
+   minNote:"₹80–₹100 per kg • rate varies by type"},
+  {id:"water", emoji:"🥤", name:"Regular Spicy Flavour Water", hi:"स्पाइसी फ्लेवर्ड पानी — थोक रेट", badge:"Per kg",
+   tiers:[{min:1,label:"Wholesale Rate",priceLow:30,priceHigh:35}],
+   unit:"kg", min:1,
+   minNote:"₹30–₹35 per kg • थोक पैकेजिंग दरें"}
+];
+
+function rateFor(p, qty){
+  for(const t of p.tiers){ if(qty >= t.min && t.price !== undefined) return t.price; }
+  if(p.tiers[0].price !== undefined) return p.tiers[0].price;
+  return null;
+}
+function fmt(n){ return "₹" + n.toLocaleString("en-IN"); }
+
+/* ---------- Render menu ---------- */
+const grid = document.getElementById("productGrid");
+PRODUCTS.forEach(p=>{
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <span class="badge">${p.badge}</span>
+    <div class="pic">${p.emoji}</div>
+    <h3>${p.name}</h3>
+    <p class="hi">${p.hi}</p>
+    <ul class="tiers">${p.tiers.map(t=>{
+      const rate = t.price !== undefined ? "₹"+t.price.toFixed(2)+"/"+p.unit
+        : "₹"+t.priceLow+"–₹"+t.priceHigh+"/"+p.unit;
+      return `<li><span>${t.label}</span><b>${rate}</b></li>`;
+    }).join("")}</ul>
+    <div class="qty-row">
+      <input type="number" id="qty-${p.id}" min="${p.min}" value="${p.id==='suji'?1000:p.min}" aria-label="Quantity for ${p.name}">
+      <button class="add-btn" onclick="addToCart('${p.id}')">Add to Cart 🛒</button>
+    </div>
+    <p class="min-note">${p.minNote}</p>`;
+  grid.appendChild(card);
+});
+
+/* ---------- Marquee ---------- */
+const items = ["🥟 Atta Golgappe ₹1.50/pc & up","🟡 Suji Golgappe ₹3.00/pc","🟠 Sev Papdi ₹0.80/pc & up","🥫 Sauces ₹80–₹100/kg","💧 Spicy Flavour Water ₹30–₹35/kg","📦 Bulk packaging rates available","💬 Order on WhatsApp: +91 93115 87237"];
+document.getElementById("stripTrack").innerHTML = (items.join(" &nbsp;•&nbsp; ") + " &nbsp;•&nbsp; ").repeat(2);
+
+/* ---------- Cart ---------- */
+let cart = JSON.parse(localStorage.getItem("rbcg_cart")||"[]");
+
+function addToCart(id){
+  const p = PRODUCTS.find(x=>x.id===id);
+  const qtyEl = document.getElementById("qty-"+id);
+  const qty = Math.max(1, parseInt(qtyEl.value)||1);
+  const existing = cart.find(c=>c.id===id);
+  if(existing) existing.qty += qty; else cart.push({id, qty});
+  save(); showToast(`${p.emoji} ${p.name} × ${qty} added to cart`);
+}
+function changeQty(id, d){
+  const it = cart.find(c=>c.id===id);
+  if(!it) return;
+  it.qty += d;
+  if(it.qty < 1) cart = cart.filter(c=>c.id!==id);
+  save();
+}
+function removeItem(id){ cart = cart.filter(c=>c.id!==id); save(); }
+function clearCart(){ cart = []; save(); }
+function save(){ localStorage.setItem("rbcg_cart", JSON.stringify(cart)); renderCart(); }
+
+function lineInfo(it){
+  const p = PRODUCTS.find(x=>x.id===it.id);
+  const rate = rateFor(p, it.qty);
+  if(rate !== null){
+    return {text:`₹${rate.toFixed(2)}/${p.unit} × ${it.qty} = ${fmt(Math.round(rate*it.qty))}`, total:rate*it.qty, rateText:`₹${rate.toFixed(2)} per ${p.unit}`};
+  }
+  const low = p.tiers[0].priceLow*it.qty, high = p.tiers[0].priceHigh*it.qty;
+  return {text:`₹${p.tiers[0].priceLow}–₹${p.tiers[0].priceHigh}/${p.unit} × ${it.qty} = ${fmt(Math.round(low))}–${fmt(Math.round(high))}`, total:(low+high)/2, totalText:fmt(Math.round(low))+"–"+fmt(Math.round(high)), rateText:`₹${p.tiers[0].priceLow}–₹${p.tiers[0].priceHigh} per ${p.unit} (rate varies)`};
+}
+
+function renderCart(){
+  const body = document.getElementById("cartBody");
+  const count = cart.reduce((s,c)=>s+c.qty,0);
+  document.getElementById("cartCount").textContent = count;
+  if(!cart.length){
+    body.innerHTML = `<div class="empty-cart">🛒<br>Your cart is empty.<br>अभी तक कोई आइटम नहीं जोड़ा गया।</div>`;
+    document.getElementById("cartTotal").textContent = "₹0";
+    return;
+  }
+  let total = 0, hasRange = false;
+  body.innerHTML = cart.map(it=>{
+    const p = PRODUCTS.find(x=>x.id===it.id);
+    const info = lineInfo(it);
+    total += info.total;
+    if(info.totalText) hasRange = true;
+    return `<div class="cart-item">
+      <div class="ci-top">
+        <div><h4>${p.emoji} ${p.name}</h4><p class="rate">${info.rateText}</p></div>
+        <span class="line-total">${info.totalText||fmt(Math.round(info.total))}</span>
+      </div>
+      <div class="ci-controls">
+        <button onclick="changeQty('${it.id}',-1)">−</button>
+        <span class="ci-qty">${it.qty} ${p.unit}</span>
+        <button onclick="changeQty('${it.id}',1)">+</button>
+        <button class="rm" onclick="removeItem('${it.id}')" title="Remove">🗑</button>
+      </div>
+    </div>`;
+  }).join("");
+  document.getElementById("cartTotal").textContent = (hasRange?"≈ ":"") + fmt(Math.round(total)) + (hasRange?"*":"");
+}
+
+/* ---------- WhatsApp order ---------- */
+function orderOnWhatsApp(){
+  if(!cart.length){ showToast("Your cart is empty — add some items first!"); return; }
+  const name = document.getElementById("custName").value.trim();
+  const note = document.getElementById("custNote").value.trim();
+  const lines = [];
+  let total = 0, hasRange = false;
+  cart.forEach(it=>{
+    const p = PRODUCTS.find(x=>x.id===it.id);
+    const info = lineInfo(it);
+    lines.push(`• ${p.name} (${p.hi.split("—")[0].trim()}) — ${it.qty} ${p.unit} — ${info.text}`);
+    total += info.total;
+    if(info.totalText) hasRange = true;
+  });
+  const msg =
+`🛒 *NEW WHOLESALE ORDER — Raju Bhai Chaat Ghar*
+100% Trusted Flavour
+------------------------------
+${lines.join("\n")}
+------------------------------
+*Estimated Total: ${fmt(Math.round(total))}${hasRange?" (sauce rates vary by type)":""}*
+${name?"👤 Name: "+name:""}
+${note?"📝 Note: "+note:""}
+Please confirm my order. धन्यवाद! 🙏`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank");
+}
+
+/* ---------- UI helpers ---------- */
+function toggleCart(open){
+  document.getElementById("drawer").classList.toggle("open", open);
+  document.getElementById("overlay").classList.toggle("open", open);
+}
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove("show"), 2200);
+}
+renderCart();
+</script>
 </body>
-
 </html>
